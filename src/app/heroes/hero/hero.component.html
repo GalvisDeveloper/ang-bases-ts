@@ -8,12 +8,15 @@
   <dd>{{age}}</dd>
 
   <td>Method:</td>
-  <dd>Something</dd>
+  <dd>{{getHeroDescription()}}</dd>
 
   <td>CamelCase:</td>
-  <dd>Something</dd>
+  <dd>{{capitalizeName}}</dd>
 </dl>
 
 
-<button class="btn btn-primary mx-2" (click)="changeName('Deadpool')"> Change name </button>
-<button class="btn btn-primary" (click)="changeAge(55)"> Change age </button>
+<button class="btn btn-primary mx-2" (click)="changeHero('Deadpool')" *ngIf=" name === 'iron man'"> Change
+  name </button>
+<button class="btn btn-primary mx-2" (click)="changeAge(55)" *ngIf="age < 50"> Change age </button>
+
+<button class="btn btn-primary" (click)="resetForm()"> Reset Form </button>
