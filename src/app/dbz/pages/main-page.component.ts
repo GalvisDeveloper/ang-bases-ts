@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ListComponent } from '../components/list/list.component';
 import { AddComponent } from '../components/add/add.component';
+import { Character } from '../interfaces/character.interface';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -15,6 +16,14 @@ import { AddComponent } from '../components/add/add.component';
 
 export class MainPageComponent {
 
-  // public characters: any[] = [];
+  public characters: Character[] = [{
+    name: 'Goku',
+    power: 10000,
+    // img: 'assets/images/goku.png'
+  }, {
+    name: 'Vegeta',
+    power: 9500,
+    // img: 'assets/images/vegeta.png'
+  }];
 
 }
