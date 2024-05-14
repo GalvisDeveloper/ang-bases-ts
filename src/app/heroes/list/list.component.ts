@@ -13,7 +13,6 @@ export class ListComponent {
   public heroDeleted?: string;
 
   deletedLasthero() {
-    const heroDeleted = this.heroNames.pop();
-    this.heroDeleted = heroDeleted;
+    this.heroDeleted = this.heroNames.pop();
   }
 }
