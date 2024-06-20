@@ -24,6 +24,14 @@ export class MainPageComponent {
     name: 'Vegeta',
     power: 9500,
     // img: 'assets/images/vegeta.png'
+  }, {
+    name: 'Trunks',
+    power: 1500,
+    // img: 'assets/images/vegeta.png'
+  }, {
+    name: 'Gohan',
+    power: 6500,
+    // img: 'assets/images/vegeta.png'
   }];
 
 }
