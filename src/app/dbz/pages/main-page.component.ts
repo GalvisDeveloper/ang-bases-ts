@@ -34,4 +34,8 @@ export class MainPageComponent {
     // img: 'assets/images/vegeta.png'
   }];
 
+  onNewCharacter(character: Character): void {
+    this.characters.push(character);
+  }
+
 }

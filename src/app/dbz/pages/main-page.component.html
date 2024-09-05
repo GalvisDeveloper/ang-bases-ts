@@ -7,11 +7,11 @@
 
   <!-- list -->
   <div class="col">
-    <dbz-list [characterList]="characters" ></dbz-list>
+    <dbz-list [characterList]="characters"></dbz-list>
   </div>
 
   <!-- form -->
   <div class="col">
-    <dbz-add-character></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
   </div>
 </div>
