@@ -38,4 +38,8 @@ export class MainPageComponent {
     this.characters.push(character);
   }
 
+  onDeleteCharacter(character: Character): void {
+    this.characters = this.characters.filter((c: Character) => c.name !== character.name);
+  }
+
 }
