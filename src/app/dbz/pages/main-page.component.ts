@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { ListComponent } from '../components/list/list.component';
 import { AddComponent } from '../components/add/add.component';
 import { Character } from '../interfaces/character.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -16,30 +17,24 @@ import { Character } from '../interfaces/character.interface';
 
 export class MainPageComponent {
 
-  public characters: Character[] = [{
-    name: 'Goku',
-    power: 10000,
-    // img: 'assets/images/goku.png'
-  }, {
-    name: 'Vegeta',
-    power: 9500,
-    // img: 'assets/images/vegeta.png'
-  }, {
-    name: 'Trunks',
-    power: 1500,
-    // img: 'assets/images/vegeta.png'
-  }, {
-    name: 'Gohan',
-    power: 6500,
-    // img: 'assets/images/vegeta.png'
-  }];
+  constructor(
+    private dbzService: DbzService
+  ) {
+    // dbzService.onNewCharacter({name: 'Goku', power: 10000});
+    // dbzService.onNewCharacter({name: 'Vegeta', power: 9500});
+    // dbzService.onNewCharacter({name: 'Trunks', power: 1500});
+  }
 
-  onNewCharacter(character: Character): void {
-    this.characters.push(character);
+  get characters(): Character[] {
+    return [...this.dbzService.characters];
   }
 
   onDeleteCharacter(character: Character): void {
-    this.characters = this.characters.filter((c: Character) => c.name !== character.name);
+    this.dbzService.onDeleteCharacter(character);
+  }
+
+  onNewCharacter(character: Character): void {
+    this.dbzService.onNewCharacter(character);
   }
 
 }
